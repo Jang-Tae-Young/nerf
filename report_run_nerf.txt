@@ -1,0 +1,130 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 32 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: .\run_nerf.py
+--------------------------------------------------------------------------------
+.\run_nerf.py:771:13: WARNING: tf.contrib.summary.create_file_writer requires manual check. tf.contrib.summary.create_file_writer() has been ported to the new tf.compat.v2.summary.create_file_writer(), which no longer re-uses existing event files for the same logdir; instead it always opens a new writer/file. The python writer objects must be re-used explicitly if the reusing behavior is desired.
+.\run_nerf.py:856:12: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+.\run_nerf.py:896:17: ERROR: tf.contrib.summary.record_summaries_every_n_global_steps requires manual check. (Manual edit required) tf.contrib.summary.record_summaries_every_n_global_steps(n, step) should be replaced by a call to tf.compat.v2.summary.record_if() with the argument `lambda: tf.math.equal(0, global_step % n)` (or in graph mode, the lambda body can be used directly). If no global step was passed, instead use tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:896:17: ERROR: Using member tf.contrib.summary.record_summaries_every_n_global_steps in deprecated module tf.contrib. tf.contrib.summary.record_summaries_every_n_global_steps cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+.\run_nerf.py:897:16: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:897:16: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:898:16: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:898:16: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:899:16: WARNING: Summary API writing function tf.contrib.summary.histogram now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:899:16: WARNING: tf.contrib.summary.histogram requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:901:20: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:901:20: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:921:21: ERROR: tf.contrib.summary.record_summaries_every_n_global_steps requires manual check. (Manual edit required) tf.contrib.summary.record_summaries_every_n_global_steps(n, step) should be replaced by a call to tf.compat.v2.summary.record_if() with the argument `lambda: tf.math.equal(0, global_step % n)` (or in graph mode, the lambda body can be used directly). If no global step was passed, instead use tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:921:21: ERROR: Using member tf.contrib.summary.record_summaries_every_n_global_steps in deprecated module tf.contrib. tf.contrib.summary.record_summaries_every_n_global_steps cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+.\run_nerf.py:923:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:923:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:924:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:924:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:926:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:926:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:929:20: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:929:20: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:930:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:930:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:934:25: ERROR: tf.contrib.summary.record_summaries_every_n_global_steps requires manual check. (Manual edit required) tf.contrib.summary.record_summaries_every_n_global_steps(n, step) should be replaced by a call to tf.compat.v2.summary.record_if() with the argument `lambda: tf.math.equal(0, global_step % n)` (or in graph mode, the lambda body can be used directly). If no global step was passed, instead use tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:934:25: ERROR: Using member tf.contrib.summary.record_summaries_every_n_global_steps in deprecated module tf.contrib. tf.contrib.summary.record_summaries_every_n_global_steps cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+.\run_nerf.py:935:24: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:935:24: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:937:24: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:937:24: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+.\run_nerf.py:939:24: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+.\run_nerf.py:939:24: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file '.\\run_nerf.py'
+ outputting to 'run_nerf_V2.py'
+--------------------------------------------------------------------------------
+
+123:24: INFO: Added keywords to args of function 'tf.linalg.norm'
+146:18: INFO: Added keywords to args of function 'tf.reduce_sum'
+150:20: INFO: Added keywords to args of function 'tf.reduce_sum'
+154:33: INFO: Added keywords to args of function 'tf.reduce_sum'
+157:18: INFO: Added keywords to args of function 'tf.reduce_sum'
+306:30: INFO: Added keywords to args of function 'tf.linalg.norm'
+614:19: INFO: Added keywords to args of function 'tf.reduce_min'
+615:18: INFO: Added keywords to args of function 'tf.reduce_max'
+771:13: INFO: Added keywords to args of function 'tf.contrib.summary.create_file_writer'
+771:13: WARNING: tf.contrib.summary.create_file_writer requires manual check. tf.contrib.summary.create_file_writer() has been ported to the new tf.compat.v2.summary.create_file_writer(), which no longer re-uses existing event files for the same logdir; instead it always opens a new writer/file. The python writer objects must be re-used explicitly if the reusing behavior is desired.
+771:13: INFO: Renamed 'tf.contrib.summary.create_file_writer' to 'tf.compat.v2.summary.create_file_writer'
+783:20: INFO: Added keywords to args of function 'tf.transpose'
+856:12: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+896:17: ERROR: tf.contrib.summary.record_summaries_every_n_global_steps requires manual check. (Manual edit required) tf.contrib.summary.record_summaries_every_n_global_steps(n, step) should be replaced by a call to tf.compat.v2.summary.record_if() with the argument `lambda: tf.math.equal(0, global_step % n)` (or in graph mode, the lambda body can be used directly). If no global step was passed, instead use tf.compat.v1.train.get_or_create_global_step().
+896:17: ERROR: Using member tf.contrib.summary.record_summaries_every_n_global_steps in deprecated module tf.contrib. tf.contrib.summary.record_summaries_every_n_global_steps cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+897:16: INFO: Added keywords to args of function 'tf.contrib.summary.scalar'
+897:16: INFO: Renamed keyword argument for tf.contrib.summary.scalar from tensor to data
+897:16: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+897:16: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+897:16: INFO: Renamed 'tf.contrib.summary.scalar' to 'tf.compat.v2.summary.scalar'
+898:16: INFO: Added keywords to args of function 'tf.contrib.summary.scalar'
+898:16: INFO: Renamed keyword argument for tf.contrib.summary.scalar from tensor to data
+898:16: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+898:16: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+898:16: INFO: Renamed 'tf.contrib.summary.scalar' to 'tf.compat.v2.summary.scalar'
+899:16: INFO: Added keywords to args of function 'tf.contrib.summary.histogram'
+899:16: INFO: Renamed keyword argument for tf.contrib.summary.histogram from tensor to data
+899:16: WARNING: Summary API writing function tf.contrib.summary.histogram now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+899:16: WARNING: tf.contrib.summary.histogram requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+899:16: INFO: Renamed 'tf.contrib.summary.histogram' to 'tf.compat.v2.summary.histogram'
+901:20: INFO: Added keywords to args of function 'tf.contrib.summary.scalar'
+901:20: INFO: Renamed keyword argument for tf.contrib.summary.scalar from tensor to data
+901:20: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+901:20: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+901:20: INFO: Renamed 'tf.contrib.summary.scalar' to 'tf.compat.v2.summary.scalar'
+921:21: ERROR: tf.contrib.summary.record_summaries_every_n_global_steps requires manual check. (Manual edit required) tf.contrib.summary.record_summaries_every_n_global_steps(n, step) should be replaced by a call to tf.compat.v2.summary.record_if() with the argument `lambda: tf.math.equal(0, global_step % n)` (or in graph mode, the lambda body can be used directly). If no global step was passed, instead use tf.compat.v1.train.get_or_create_global_step().
+921:21: ERROR: Using member tf.contrib.summary.record_summaries_every_n_global_steps in deprecated module tf.contrib. tf.contrib.summary.record_summaries_every_n_global_steps cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+923:20: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+923:20: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+923:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+923:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+923:20: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+924:20: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+924:20: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+924:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+924:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+924:20: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+926:20: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+926:20: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+926:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+926:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+926:20: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+929:20: INFO: Added keywords to args of function 'tf.contrib.summary.scalar'
+929:20: INFO: Renamed keyword argument for tf.contrib.summary.scalar from tensor to data
+929:20: WARNING: Summary API writing function tf.contrib.summary.scalar now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+929:20: WARNING: tf.contrib.summary.scalar requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+929:20: INFO: Renamed 'tf.contrib.summary.scalar' to 'tf.compat.v2.summary.scalar'
+930:20: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+930:20: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+930:20: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+930:20: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+930:20: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+934:25: ERROR: tf.contrib.summary.record_summaries_every_n_global_steps requires manual check. (Manual edit required) tf.contrib.summary.record_summaries_every_n_global_steps(n, step) should be replaced by a call to tf.compat.v2.summary.record_if() with the argument `lambda: tf.math.equal(0, global_step % n)` (or in graph mode, the lambda body can be used directly). If no global step was passed, instead use tf.compat.v1.train.get_or_create_global_step().
+934:25: ERROR: Using member tf.contrib.summary.record_summaries_every_n_global_steps in deprecated module tf.contrib. tf.contrib.summary.record_summaries_every_n_global_steps cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+935:24: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+935:24: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+935:24: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+935:24: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+935:24: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+937:24: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+937:24: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+937:24: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+937:24: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+937:24: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+939:24: INFO: Added keywords to args of function 'tf.contrib.summary.image'
+939:24: INFO: Renamed keyword argument for tf.contrib.summary.image from tensor to data
+939:24: WARNING: Summary API writing function tf.contrib.summary.image now requires a 'step' argument; inserting default of tf.compat.v1.train.get_or_create_global_step().
+939:24: WARNING: tf.contrib.summary.image requires manual check. tf.contrib.summary.* functions have been migrated best-effort to tf.compat.v2.summary.* equivalents where possible, but the resulting code is not guaranteed to work, so please check carefully. For more information about the new summary API, see the Effective TF 2.0 migration document or check the updated TensorBoard tutorials.
+939:24: INFO: Renamed 'tf.contrib.summary.image' to 'tf.compat.v2.summary.image'
+--------------------------------------------------------------------------------
+
