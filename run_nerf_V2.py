@@ -582,14 +582,7 @@ def train():
         np.random.seed(args.random_seed)
         tf.compat.v1.set_random_seed(args.random_seed)
 
-    #debug
-    # print('<<<<<<<<<<<<<<<<<<< This is for DEBUG >>>>>>>>>>>>>>>>>>>')
-    # print(args)
-    # print('<<<<<<<<<<<<<<<<<<< End DEBUG >>>>>>>>>>>>>>>>>>>')
-
-
     # Load data
-
     if args.dataset_type == 'llff':
         images, poses, bds, render_poses, i_test = load_llff_data(args.datadir, args.factor,
                                                                   recenter=True, bd_factor=.75,
